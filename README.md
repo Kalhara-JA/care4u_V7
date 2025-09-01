@@ -48,7 +48,7 @@ A comprehensive health and wellness mobile application built with React Native a
 1. **Clone and install**
    ```bash
    git clone <repository-url>
-   cd care4u_V6
+   cd care4u-mobile-app
    ```
 
 2. **Backend setup**
@@ -90,7 +90,7 @@ A comprehensive health and wellness mobile application built with React Native a
    
    # Start development server
    npx expo start
-   
+   ```
 
 ## Database Schema
 
@@ -110,26 +110,46 @@ A comprehensive health and wellness mobile application built with React Native a
 ## Project Structure
 
 ```
+care4u-mobile-app/
 ├── backend/                 # Node.js API server
 │   ├── src/
-│   │   ├── controllers/     # Request handlers
+│   │   ├── config/         # Configuration files (database, email)
+│   │   ├── controllers/    # Request handlers
+│   │   ├── database/       # Database initialization and schema
+│   │   ├── middleware/     # Custom middleware (auth, validation)
 │   │   ├── models/         # Database models
 │   │   ├── routes/         # API routes
 │   │   ├── services/       # Business logic
-│   │   ├── middleware/     # Custom middleware
-│   │   └── config/         # Configuration files
-
+│   │   ├── types/          # TypeScript type definitions
+│   │   ├── utils/          # Utility functions
+│   │   └── index.ts        # Main server entry point
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── env.example
+│
 ├── frontend/               # React Native mobile app
 │   ├── src/
 │   │   ├── components/     # Reusable UI components
-│   │   ├── screens/        # App screens
+│   │   ├── constants/      # App constants and theme
+│   │   ├── contexts/       # React contexts (AppointmentContext)
 │   │   ├── navigation/     # Navigation configuration
+│   │   ├── screens/        # App screens (organized by feature)
+│   │   │   ├── appointments/
+│   │   │   ├── exercise/
+│   │   │   ├── meal/
+│   │   │   └── sugar/
 │   │   ├── services/       # API services
-│   │   └── constants/      # App constants
+│   │   ├── types/          # TypeScript type definitions
+│   │   └── utils/          # Utility functions
+│   ├── App.tsx             # Main app component
+│   ├── app.json            # Expo configuration
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── babel.config.js
+│
+└── README.md               # Project documentation
 
-└── README.md               # Main README File (This file)
 ```
-
 ## Resources
 
 ### Documentation

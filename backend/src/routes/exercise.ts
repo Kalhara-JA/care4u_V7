@@ -39,6 +39,9 @@ router.get('/activity-types', ExerciseController.getActivityTypes);
 // Calculate calories burned for an activity
 router.post('/calculate-calories', validateCalculateCalories, ExerciseController.calculateCalories);
 
+// Delete exercise activities by date and type
+router.delete('/', ExerciseController.deleteExerciseActivitiesByDateAndType);
+
 // Get exercise activity by ID
 router.get('/:id', validateExerciseId, ExerciseController.getExerciseById);
 
@@ -47,8 +50,5 @@ router.put('/:id', validateExerciseId, validateUpdateExercise, ExerciseControlle
 
 // Delete exercise activity
 router.delete('/:id', validateExerciseId, ExerciseController.deleteExercise);
-
-// Delete exercise activities by date and type
-router.delete('/', ExerciseController.deleteExerciseActivitiesByDateAndType);
 
 export default router;

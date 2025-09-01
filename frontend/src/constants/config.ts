@@ -35,7 +35,7 @@ export const API_ENDPOINTS = {
   EXERCISE_DAILY_SUMMARY: '/api/exercise/daily-summary',
   EXERCISE_HISTORY: '/api/exercise/history',
   EXERCISE_UPDATE: '/api/exercise/update',
-  EXERCISE_DELETE: '/api/exercise/delete',
+  EXERCISE_DELETE: '/api/exercise',
   EXERCISE_ACTIVITY_TYPES: '/api/exercise/activity-types',
   
   // Appointment System

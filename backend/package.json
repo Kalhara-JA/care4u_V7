@@ -7,8 +7,10 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "build": "tsc && cp src/database/schema.sql dist/database/",
+    "build:prod": "npm ci --only=production && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:init": "ts-node src/database/init.ts"
+    "db:init": "ts-node src/database/init.ts",
+    "health-check": "node scripts/health-check.js"
   },
   "keywords": [
     "health",
@@ -20,6 +22,10 @@
   ],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
     "axios": "^1.11.0",
     "cors": "^2.8.5",
